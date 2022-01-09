@@ -4,14 +4,12 @@ const fs = require('fs');
 // TODO: Create an array of questions for user input
 const userQuestions = () => {
     return inquirer.prompt({
-        {
             type:'input',
             name:'gituser',
             message:'Please enter your GitHub username',
             validate: gitUserInput => {
 
             }
-        }
     })
 }
 

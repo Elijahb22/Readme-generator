@@ -66,16 +66,38 @@ const userQuestions = () => {
 };
 
 // TODO: Create a function to write README file
-function writeFile(fileName, data) {
-    fs.writeFile(fileName, data, function (err) {
-      if (err) {
-        console.error(err);
-      }
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/README.md', fileContent, error => {
+            if (error) {
+                console.log(error);
+                return;
+            }
+            resolve({
+                ok: true,
+                message: 'File created!'
+            });
+        });
     });
-  }
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    userQuestions()
+        .then(data => {
+            return generateMarkdown(data);
+        })
+        .then(pageMD => {
+            return writeFile(pageMD);
+        })
+        .then(writeFileResponse => {
+            console.log(writeFileResponse);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
+
 
 // Function call to initialize app
 init();

@@ -80,6 +80,6 @@ function generateMarkdown(data) {
   You can reach me at ${data.email}.
   You can also view more projects at ${data.github}.
 `;
-}
+};
 
-module.exports = generateMarkdown;
+module.exports = (generateMarkdown);

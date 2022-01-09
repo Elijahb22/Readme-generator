@@ -61,20 +61,18 @@ const userQuestions = () => {
             name: 'licenseInfo',
             message: 'What license are you using for this project?',
             choices: ['Apache 2.0', 'ISC', 'MIT', 'ODbL', 'GNU 3.0' ]
-        },
-        {
-            type: 'confirm',
-            name: 'tableContents',
-            message: 'Would you like to add a Table of Contents?',
-            default: true
         }
     ])
 };
 
 // TODO: Create a function to write README file
-const writeFile = fileContent => {
-    
-}
+function writeFile(fileName, data) {
+    fs.writeFile(fileName, data, function (err) {
+      if (err) {
+        console.error(err);
+      }
+    });
+  }
 
 // TODO: Create a function to initialize app
 function init() {}

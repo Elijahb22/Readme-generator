@@ -13,8 +13,8 @@ function renderLicenseBadge(license) {
   if (license === 'ODbL') {
     return `[![License: ODbL](https://img.shields.io/badge/Label-ODbL-orange)]`
   }
-  if (license === 'CC0') {
-    return`[[License: CC0](https://img.shields.io/badge/Label-CC0-blue)]`
+  if (license === 'GNU 3.0') {
+    return`[[License: GNU 3.0](https://img.shields.io/badge/Label-GNU__3.0-blue)]`
   } else {
     return "";
   }
@@ -22,7 +22,25 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license === 'Apache 2.0') {
+    return "https://opensource.org/licenses/Apache-2.0"
+  }
+  if (license === 'ISC') {
+    return "https://opensource.org/licenses/ISC"
+  }
+  if (license === 'MIT') {
+    return "https://opensource.org/licenses/MIT";
+  }
+  if (license === 'ODbL') {
+    return "https://opendatacommons.org/licenses/odbl/";
+  }
+  if (license === 'GNU 3.0') {
+    return "https://opensource.org/licenses/GPL-3.0";
+  } else {
+    return "";
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string

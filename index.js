@@ -7,13 +7,26 @@ const userQuestions = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'gituser',
+            name: 'gitHub',
             message: 'Please enter your GitHub username',
             validate: gitUserInput => {
                 if (gitUserInput) {
                     return true;
                 } else {
                     console.log("Please enter a username!")
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter your email address (Required):',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log("PLEASE ENTER AN EMAIL ADDRESS!");
                     return false;
                 }
             }
@@ -33,32 +46,32 @@ const userQuestions = () => {
         },
         {
             type: 'input',
-            name: 'projectDesc',
+            name: 'projectDescription',
             message: 'Please provide a brief description about your project:'
         },
         {
             type: 'input',
-            name: 'installationInfo',
+            name: 'installationInformation',
             message: 'What are the steps required to install your project:'
         },
         {
             type: 'input',
-            name: 'usageInfo',
+            name: 'usageInformation',
             message: 'Provide instructions and examples for use:'
         },
         {
             type: 'input',
-            name: 'contributionInfo',
+            name: 'contribution',
             message: 'For other developers to contribute it, add guidelines on how to do so:'
         },
         {
             type: 'input',
-            name: 'testInfo',
+            name: 'tests',
             message: 'Write tests for your application, and provide examples on how to run them:'
         },
         {
             type: 'list',
-            name: 'licenseInfo',
+            name: 'license',
             message: 'What license are you using for this project?',
             choices: ['Apache 2.0', 'ISC', 'MIT', 'ODbL', 'GNU 3.0' ]
         }

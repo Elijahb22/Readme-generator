@@ -56,23 +56,22 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   
     const {
-      gituser,
+      gitHub,
       email,
       projectTitle,
-      description,
-      installationInfo,
-      usageInfo,
-      contributionInfo,
-      testInfo,
-      licenseInfo,
-      tableContents
+      projectDescription,
+      installationInformation,
+      usageInformation,
+      contribution,
+      tests,
+      license,
     } = data;
 
   return `
-  # ${data.title}
+  # ${data.projectTitle}
   ${renderLicenseBadge(data.license)}
   ## Description
-  ${data.description}
+  ${data.projectDescription}
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
@@ -81,9 +80,9 @@ function generateMarkdown(data) {
   - [Tests](#tests)
   - [Questions](#questions)
   ## Installation
-  ${data.installation}
+  ${data.installationInformation}
   ## Usage
-  ${data.usage}
+  ${data.usageInformation}
   ## License
   ${data.license}
   ## Contribution
@@ -92,7 +91,7 @@ function generateMarkdown(data) {
   ${data.tests}
   ## Questions
   You can reach me at ${data.email}.
-  You can also view more projects at ${data.github}.
+  You can also view more projects at ${data.gitHub}.
 `;
 };
 

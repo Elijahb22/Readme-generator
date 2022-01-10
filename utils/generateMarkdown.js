@@ -91,7 +91,8 @@ function generateMarkdown(data) {
   ${data.tests}
   ## Questions
   You can reach me at ${data.email}.
-  You can also view more projects at ${data.gitHub}.
+
+  You can also view more projects at [${data.gitHub}](https://github.com/${gitHub}).
 `;
 };
 

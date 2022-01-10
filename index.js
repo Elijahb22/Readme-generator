@@ -26,7 +26,7 @@ const userQuestions = () => {
                 if (emailInput) {
                     return true;
                 } else {
-                    console.log("PLEASE ENTER AN EMAIL ADDRESS!");
+                    console.log("Please enter your email address!");
                     return false;
                 }
             }
@@ -39,7 +39,7 @@ const userQuestions = () => {
                 if (projectTitleInput) {
                     return true;
                 } else {
-                    console.log("PLEASE ENTER A PROJECT NAME!");
+                    console.log("Please enter project title!");
                     return false;
                 }
             }
